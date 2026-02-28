@@ -3,34 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Rafiddain - Solar Energy</title>
+    <title>Al Rafiddain - صدردین قادر</title>
     <style>
-        /* ڕێکخستنی گشتی */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         :root {
-            --dark-blue: #1a2a6c;
+            --dark-blue: #0a192f;
+            --light-blue: #112240;
+            --accent-blue: #3498db;
             --grey: #f4f4f4;
-            --dark-grey: #333;
-            --accent-blue: #0056b3;
+            --white: #ffffff;
         }
 
-        body {
-            background-color: var(--grey);
-            color: var(--dark-grey);
-            line-height: 1.6;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--grey); color: #333; line-height: 1.7; scroll-behavior: smooth; }
 
-        /* هێدەر و ناڤیگەیشن */
         header {
             background-color: var(--dark-blue);
             color: white;
-            padding: 1rem 5%;
+            padding: 15px 5%;
             position: fixed;
             width: 100%;
             top: 0;
@@ -38,21 +27,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        }
+        .logo h1 { font-size: 1.5rem; color: var(--white); }
+        .owner-name { font-size: 0.8rem; color: var(--accent-blue); display: block; }
 
-        /* بەشی سەرەکی (Hero) */
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--accent-blue); }
+
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(26, 42, 108, 0.7), rgba(26, 42, 108, 0.7)), 
-                        url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
+                        url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -61,138 +48,146 @@
             align-items: center;
             text-align: center;
             color: white;
-            padding-top: 60px;
+            padding: 0 20px;
         }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.5rem; color: var(--accent-blue); font-weight: bold; }
 
-        /* بەشەکان */
-        section { padding: 80px 10%; text-align: center; }
+        section { padding: 80px 10%; }
 
-        .about { background: white; }
-        
-        /* بەشی Dahai Solar */
-        .dahai-solar {
-            background-color: #e9ecef;
+        .our-works { background: white; text-align: center; }
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .work-card {
+            background: var(--grey);
+            padding: 10px;
             border-radius: 15px;
-            padding: 40px;
-            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .work-card img { 
+            width: 100%; 
+            border-radius: 10px; 
+            height: 250px; 
+            object-fit: cover;
         }
 
-        /* فۆرمی حجز کردن */
+        .dahai-section {
+            background-color: var(--light-blue);
+            color: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px 0;
+        }
+
         .booking-form {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .booking-form input, .booking-form select, .booking-form button {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .booking-form button {
-            background-color: var(--dark-blue);
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-
-        .booking-form button:hover { background-color: var(--accent-blue); }
-
-        /* پەیوەندی و فووتەر */
-        footer {
-            background-color: var(--dark-blue);
-            color: white;
-            padding: 40px 10%;
-            text-align: center;
-        }
-
-        .contact-info { margin-bottom: 20px; }
-        .social-links a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        h2 { color: var(--dark-blue); margin-bottom: 30px; font-size: 2.5rem; }
+        input, select, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        button { background: var(--accent-blue); color: white; border: none; cursor: pointer; font-weight: bold; font-size: 1.1rem; }
+        
+        footer { background: var(--dark-blue); color: white; padding: 40px 10%; text-align: center; }
+        .social-links { margin-top: 20px; }
+        .social-links a { color: var(--accent-blue); text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1rem; }
+        
+        .contact-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px; margin: 20px 0; border: 1px solid var(--accent-blue); }
+        .phone-link { color: #2ecc71; text-decoration: none; font-size: 1.5rem; font-weight: bold; display: block; margin: 10px 0; }
+        .map-link { color: #e74c3c; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo"><h1>Al Rafiddain</h1></div>
+        <div class="logo">
+            <h1>Al Rafiddain</h1>
+            <span class="owner-name">بەڕێوەبەر: صدردین قادر</span>
+        </div>
         <nav>
             <a href="#home">سەرەکی</a>
-            <a href="#about">دەربارە</a>
+            <a href="#works">کارەکانمان</a>
             <a href="#dahai">Dahai Solar</a>
             <a href="#booking">حجزکردن</a>
-            <a href="#contact">پەیوەندی</a>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <h1>کۆمپانیای الرافدین</h1>
-        <p>پێشەنگ لە دابینکردنی سیستەمی وزەی خۆر بۆ دواڕۆژێکی ڕوناکتر</p>
-        <a href="#booking" style="background: #f39c12; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">ئێستا حجز بکە</a>
+        <p>کارەکانت بە رافیدەین بسپێرە و خەمی پسولەی ماڵەکەت نەبێ!</p>
+        <p style="font-size: 1.1rem; color: white; margin-top: 10px;">بەهەرزانترین نرخ وە بە باشترین کوالێتی</p>
     </section>
 
-    <section id="about" class="about">
-        <h2>دەربارەی ئێمە</h2>
-        <p>کۆمپانیای Al Rafiddain تایبەتە بە هاوردەکردن و جێبەجێکردنی باشترین سیستەمەکانی وزەی خۆر لە هەرێمی کوردستان و عێراق، بە ئامانجی کەمکردنەوەی تێچووی کارەبا و پاراستنی ژینگە.</p>
+    <section id="works" class="our-works">
+        <h2>کارەکانمان</h2>
+        <p>کورتەیەک دەربارەی کارەکانمان: کارەکانت بە رافیدەین بسپێرە و خەمی پسولەی ماڵەکەت نەبێ ، بەهەرزانترین نرخ وە بە باشترین کوالێتی.</p>
+        
+        <div class="works-grid">
+            <div class="work-card">
+                <img src="https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?w=500" alt="کارەکانمان">
+                <p style="margin-top:10px; font-weight:bold;">جێبەجێکردنی پرۆفیشناڵ</p>
+            </div>
+            <div class="work-card">
+                <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=500" alt="کارەکانمان">
+                <p style="margin-top:10px; font-weight:bold;">باشترین کوالێتی پانێڵ</p>
+            </div>
+            <div class="work-card">
+                <img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=500" alt="کارەکانمان">
+                <p style="margin-top:10px; font-weight:bold;">گەرەنتی درێژخایەن</p>
+            </div>
+        </div>
     </section>
 
     <section id="dahai">
-        <div class="dahai-solar">
-            <h2>Dahai Solar</h2>
-            <p>ئەمە بەشێکی تایبەتە بە سیستەمی Dahai Solar کە یەکێکە لە کوالێتی بەرزترین پانێڵەکانمان. ئەم سیستەمە بە بەرگەی گەرمی بەرز دەگرێت و گەرەنتی ٢٥ ساڵی لەگەڵدایە.</p>
-            [attachment_0](attachment)
+        <div class="dahai-section">
+            <h2>Dahai Solar 720W (Type A)</h2>
+            <p><strong>لوتکەی تەکنەلۆژیا لە دەستی ئێوەدا!</strong> پانێڵی Dahai Solar 720W تەنها سەرچاوەیەک نییە بۆ کارەبا، بەڵکو وەبەرهێنانێکی ژیرانەیە بۆ داهاتوو.</p>
+            <br>
+            <p>ئەم پانێڵە تایبەت بۆ ژینگەی گەرمی کوردستان دیزاین کراوە؛ تەنانەت لە ژێر تیشکی توندی خۆری هاویندا، بە کەمترین دابەزینی توانا بەردەوام دەبێت لە بەرهەمهێنان. کارکردن لە پلەی گەرمی <strong>-40°C بۆ +85°C</strong>.</p>
         </div>
     </section>
 
     <section id="booking">
-        <h2>حجزکردنی پانێڵ</h2>
         <div class="booking-form">
+            <h2 style="margin-bottom: 20px;">داواکاری حجزکردن</h2>
             <form>
                 <input type="text" placeholder="ناوی تەواو" required>
                 <input type="tel" placeholder="ژمارەی مۆبایل" required>
                 <select>
-                    <option value="">جۆری سیستەمەکە هەڵبژێرە</option>
-                    <option value="small">سیستەمی ماڵان (بچوک)</option>
-                    <option value="medium">سیستەمی بازرگانی (ناوەند)</option>
-                    <option value="large">Dahai Solar (پێشکەوتوو)</option>
+                    <option>Dahai Solar 720W - Type A</option>
+                    <option>سیستەمی تەواو بۆ ماڵان</option>
                 </select>
-                <button type="submit">ناردنی داواکاری</button>
+                <button type="submit">ناردنی زانیاری</button>
             </form>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>زانیاری پەیوەندی</h2>
-        <div class="contact-info">
-            <p>📍 شوێن: هەولێر - شەقامی سەرەکی</p>
-            <p>📞 مۆبایل: 0750XXXXXXX</p>
-            <p>📧 ئیمەیڵ: info@alrafiddain.com</p>
-        </div>
-        <div class="social-links">
-            <a href="#">Facebook</a> |
-            <a href="#">Instagram</a> |
-            <a href="#">WhatsApp</a>
-        </div>
-    </section>
-
     <footer>
-        <p>&copy; 2024 Al Rafiddain Company. هەموو مافەکان پارێزراوە.</p>
+        <h2>پەیوەندیمان پێوە بکەن</h2>
+        <p>بەڕێوەبەر: صدردین قادر</p>
+        
+        <div class="contact-box">
+            <p>📍 ناونیشان:</p>
+            <p>مخمور - گەرەکی شەهیدان - بەرامبەر مزگەوتی سید عمر</p>
+            <a href="https://goo.gl/maps/iKk77dP3EjDf9kkL7" target="_blank" class="map-link">📍 نیشاندانی شوێن لەسەر نەخشە</a>
+            
+            <p style="margin-top: 20px;">📞 ژمارەی مۆبایل:</p>
+            <a href="tel:07504686017" class="phone-link">٠٧٥٠٤٦٨٦٠١٧</a>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1P2ckH63Dj/" target="_blank">Facebook</a>
+            <a href="https://www.tiktok.com/@useree8ylmkkzq?_r=1&_t=ZS-94JHgt2xKxJ" target="_blank">TikTok</a>
+        </div>
+        <p style="margin-top: 30px; opacity: 0.6;">&copy; 2026 Al Rafiddain Company. هەموو مافەکان پارێزراوە.</p>
     </footer>
 
 </body>
