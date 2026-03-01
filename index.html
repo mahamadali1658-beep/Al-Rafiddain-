@@ -11,10 +11,10 @@
             --accent-blue: #3498db;
             --grey: #f4f4f4;
             --white: #ffffff;
-        }
+        } 
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        body { background-color: var(--grey); color: #333; line-height: 1.7; scroll-behavior: smooth; }
+        body { background-color: var(--grey); color: #333; line-height: 1.7; scroll-behavior: smooth; } 
 
         header {
             background-color: var(--dark-blue);
@@ -28,13 +28,13 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
+        } 
 
         .logo h1 { font-size: 1.5rem; color: var(--white); }
-        .owner-name { font-size: 0.8rem; color: var(--accent-blue); display: block; }
+        .owner-name { font-size: 0.8rem; color: var(--accent-blue); display: block; } 
 
         nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
-        nav a:hover { color: var(--accent-blue); }
+        nav a:hover { color: var(--accent-blue); } 
 
         .hero {
             height: 100vh;
@@ -49,13 +49,14 @@
             text-align: center;
             color: white;
             padding: 0 20px;
-        }
+        } 
 
         .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.5rem; color: var(--accent-blue); font-weight: bold; }
+        .hero p { font-size: 1.5rem; color: var(--accent-blue); font-weight: bold; } 
 
-        section { padding: 60px 10%; }
+        section { padding: 60px 10%; } 
 
+        /* بەشی کارەکانمان */
         .our-works { background: white; text-align: center; }
         .works-grid {
             display: grid;
@@ -64,31 +65,31 @@
             margin-top: 30px;
         }
         .work-card { background: var(--grey); padding: 10px; border-radius: 15px; }
-        .work-card img { width: 100%; border-radius: 10px; height: 220px; object-fit: cover; }
+        .work-card img { width: 100%; border-radius: 10px; height: 220px; object-fit: cover; } 
 
+        /* بەشی زانیاری نوێ */
         .info-section { background-color: var(--white); border-top: 5px solid var(--accent-blue); }
         .info-container { max-width: 900px; margin: 0 auto; }
         .info-box { background: var(--grey); padding: 30px; border-radius: 15px; margin-bottom: 30px; }
         .info-box h3 { color: var(--dark-blue); margin-bottom: 15px; border-bottom: 2px solid var(--accent-blue); display: inline-block; }
         
-        .promo-text { font-style: italic; color: var(--dark-blue); font-weight: bold; font-size: 1.2rem; text-align: center; margin: 40px 0; padding: 20px; border: 2px dashed var(--accent-blue); }
+        .promo-text { font-style: italic; color: var(--dark-blue); font-weight: bold; font-size: 1.2rem; text-align: center; margin: 40px 0; padding: 20px; border: 2px dashed var(--accent-blue); } 
 
         .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
-        .image-gallery img { width: 100%; border-radius: 10px; height: 150px; object-fit: cover; }
+        .image-gallery img { width: 100%; border-radius: 10px; height: 150px; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1); } 
 
         .booking-form { max-width: 500px; margin: 40px auto; background: white; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         input, select, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
-        button { background: var(--accent-blue); color: white; border: none; cursor: pointer; font-weight: bold; }
+        button { background: var(--accent-blue); color: white; border: none; cursor: pointer; font-weight: bold; } 
 
         footer { background: var(--dark-blue); color: white; padding: 40px 10%; text-align: center; }
-        .contact-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin: 20px 0; border: 1px solid var(--accent-blue); }
-        .address-link { color: #ffffff; text-decoration: none; display: block; margin: 10px 0; transition: 0.3s; }
+        .address-link { color: white; text-decoration: none; transition: 0.3s; display: inline-block; margin: 10px 0; }
         .address-link:hover { color: var(--accent-blue); }
-        .phone-link { color: #2ecc71; text-decoration: none; font-size: 1.7rem; font-weight: bold; display: block; margin: 15px 0; }
+        .phone-link { color: #2ecc71; text-decoration: none; font-size: 1.6rem; font-weight: bold; display: block; margin: 15px 0; }
         .social-links a { color: var(--accent-blue); text-decoration: none; margin: 0 15px; font-weight: bold; }
     </style>
 </head>
-<body>
+<body> 
 
     <header>
         <div class="logo">
@@ -101,12 +102,12 @@
             <a href="#info">زانیاری</a>
             <a href="#booking">حجزکردن</a>
         </nav>
-    </header>
+    </header> 
 
     <section id="home" class="hero">
         <h1>کۆمپانیای الرافدین</h1>
         <p>کارەکانت بە رافیدەین بسپێرە و خەمی پسولەی ماڵەکەت نەبێ!</p>
-    </section>
+    </section> 
 
     <section id="works" class="our-works">
         <h2>کارەکانمان</h2>
@@ -116,7 +117,7 @@
             <div class="work-card"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=500" alt="Work 2"></div>
             <div class="work-card"><img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=500" alt="Work 3"></div>
         </div>
-    </section>
+    </section> 
 
     <section id="info" class="info-section">
         <div class="info-container">
@@ -125,7 +126,7 @@
             <div class="info-box">
                 <h3>☀️ لوتکەی تەکنەلۆژیا</h3>
                 <p>کۆمپانیای الرافدین شانازی دەکات بە دابینکردنی بەهێزترین و نوێترین نەوەی پانێڵی وزەی خۆر لە جیهاندا. پانێڵی Dahai Solar 720W تەنها سەرچاوەیەک نییە بۆ کارەبا، بەڵکو وەبەرهێنانێکی ژیرانەیە بۆ داهاتوو.</p>
-            </div>
+            </div> 
 
             <div class="info-box">
                 <h3>🚀 بۆچی Dahai Solar 720W هەڵبژێریت؟</h3>
@@ -135,20 +136,28 @@
                     <li><strong>سیستەمی Bifacial:</strong> بەرهەمهێنان لە هەردوو لاوە (25% وزەی زیاتر).</li>
                     <li><strong>گەرەنتی:</strong> ٢٥ بۆ ٣٠ ساڵ گەرەنتی بەرهەمهێنان.</li>
                 </ul>
-            </div>
+            </div> 
+
+            <div class="info-box">
+                <h3>💎 تایبەتمەندییە ناوازەکان</h3>
+                <p>• Anti-PID: پارێزراو لە دابەزینی توانا.<br>
+                   • SMBB: گواستنەوەی خێراتری کارەبا.<br>
+                   • بەرگری میکانیکی: خۆڕاگر لە بەرامبەر با و بارانی بەخوڕ و بەفر.</p>
+            </div> 
 
             <div class="promo-text">
                 "لەگەڵ Al Rafiddain و Dahai Solar، ماڵەکەت بکە بە وێستگەیەکی بەهێزی وزە و ماڵئاوایی لە پسووڵەی گرانبەهای کارەبا بکە."
-            </div>
+            </div> 
 
+            <h3>📸 گالەری وێنەکان</h3>
             <div class="image-gallery">
                 <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?w=400" alt="Solar 1">
-                <img src="https://share.google/SIjsO9eKu2WS0ZkWb" alt="Solar 2">
-                <img src="https://share.google/6aksXFL47gBLvYeok" alt="Solar 3">
-                <img src="https://share.google/p7Unn5aMf7D4bkYzz" alt="Solar 4">
+                <img src="https://images.unsplash.com/photo-1594818821917-cf74c43c945a?w=400" alt="Solar 2">
+                <img src="https://images.unsplash.com/photo-1521701971094-1974163f80d1?w=400" alt="Solar 3">
+                <img src="https://images.unsplash.com/photo-1545209174-cd44a30b26fc?w=400" alt="Solar 4">
             </div>
         </div>
-    </section>
+    </section> 
 
     <section id="booking">
         <div class="booking-form">
@@ -159,27 +168,20 @@
                 <button type="submit">ناردنی داواکاری</button>
             </form>
         </div>
-    </section>
+    </section> 
 
     <footer>
         <p>بەڕێوەبەر: صدردین قادر</p>
-        
-        <div class="contact-box">
-            <p style="color: var(--accent-blue); font-weight: bold;">📍 ناونیشان (بۆ بینینی شوێن لەسەر نەخشە کلیک بکە):</p>
-            <a href="https://goo.gl/maps/iKk77dP3EjDf9kkL7" target="_blank" class="address-link">
-                مخمور - گەرەکی شەهیدان - بەرامبەر مزگەوتی سید عمر
-            </a>
-            
-            <p style="margin-top: 20px;">📞 ژمارەی مۆبایل:</p>
-            <a href="tel:07504686017" class="phone-link">٠٧٥٠٤٦٨٦٠١٧</a>
-        </div>
-
+        <a href="https://goo.gl/maps/iKk77dP3EjDf9kkL7" target="_blank" class="address-link">
+            📍 مخمور - گەرەکی شەهیدان - بەرامبەر مزگەوتی سید عمر
+        </a>
+        <a href="tel:07504686017" class="phone-link">٠٧٥٠٤٦٨٦٠١٧</a>
         <div class="social-links">
             <a href="https://www.facebook.com/share/1P2ckH63Dj/" target="_blank">Facebook</a>
             <a href="https://www.tiktok.com/@useree8ylmkkzq?_r=1&_t=ZS-94JHgt2xKxJ" target="_blank">TikTok</a>
         </div>
         <p style="margin-top:20px; opacity:0.5;">&copy; 2026 Al Rafiddain Company</p>
-    </footer>
+    </footer> 
 
 </body>
 </html>
