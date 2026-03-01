@@ -56,7 +56,6 @@
 
         section { padding: 60px 10%; }
 
-        /* بەشی کارەکانمان */
         .our-works { background: white; text-align: center; }
         .works-grid {
             display: grid;
@@ -67,7 +66,6 @@
         .work-card { background: var(--grey); padding: 10px; border-radius: 15px; }
         .work-card img { width: 100%; border-radius: 10px; height: 220px; object-fit: cover; }
 
-        /* بەشی زانیاری نوێ */
         .info-section { background-color: var(--white); border-top: 5px solid var(--accent-blue); }
         .info-container { max-width: 900px; margin: 0 auto; }
         .info-box { background: var(--grey); padding: 30px; border-radius: 15px; margin-bottom: 30px; }
@@ -76,14 +74,17 @@
         .promo-text { font-style: italic; color: var(--dark-blue); font-weight: bold; font-size: 1.2rem; text-align: center; margin: 40px 0; padding: 20px; border: 2px dashed var(--accent-blue); }
 
         .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
-        .image-gallery img { width: 100%; border-radius: 10px; height: 150px; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .image-gallery img { width: 100%; border-radius: 10px; height: 150px; object-fit: cover; }
 
         .booking-form { max-width: 500px; margin: 40px auto; background: white; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         input, select, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
         button { background: var(--accent-blue); color: white; border: none; cursor: pointer; font-weight: bold; }
 
         footer { background: var(--dark-blue); color: white; padding: 40px 10%; text-align: center; }
-        .phone-link { color: #2ecc71; text-decoration: none; font-size: 1.6rem; font-weight: bold; display: block; margin: 15px 0; }
+        .contact-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin: 20px 0; border: 1px solid var(--accent-blue); }
+        .address-link { color: #ffffff; text-decoration: none; display: block; margin: 10px 0; transition: 0.3s; }
+        .address-link:hover { color: var(--accent-blue); }
+        .phone-link { color: #2ecc71; text-decoration: none; font-size: 1.7rem; font-weight: bold; display: block; margin: 15px 0; }
         .social-links a { color: var(--accent-blue); text-decoration: none; margin: 0 15px; font-weight: bold; }
     </style>
 </head>
@@ -136,23 +137,15 @@
                 </ul>
             </div>
 
-            <div class="info-box">
-                <h3>💎 تایبەتمەندییە ناوازەکان</h3>
-                <p>• Anti-PID: پارێزراو لە دابەزینی توانا.<br>
-                   • SMBB: گواستنەوەی خێراتری کارەبا.<br>
-                   • بەرگری میکانیکی: خۆڕاگر لە بەرامبەر با و بارانی بەخوڕ و بەفر.</p>
-            </div>
-
             <div class="promo-text">
                 "لەگەڵ Al Rafiddain و Dahai Solar، ماڵەکەت بکە بە وێستگەیەکی بەهێزی وزە و ماڵئاوایی لە پسووڵەی گرانبەهای کارەبا بکە."
             </div>
 
-            <h3>📸 گالەری وێنەکان</h3>
             <div class="image-gallery">
                 <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?w=400" alt="Solar 1">
-                <img src="https://images.unsplash.com/photo-1594818821917-cf74c43c945a?w=400" alt="Solar 2">
-                <img src="https://images.unsplash.com/photo-1521701971094-1974163f80d1?w=400" alt="Solar 3">
-                <img src="https://images.unsplash.com/photo-1545209174-cd44a30b26fc?w=400" alt="Solar 4">
+                <img src="https://share.google/SIjsO9eKu2WS0ZkWb" alt="Solar 2">
+                <img src="https://share.google/6aksXFL47gBLvYeok" alt="Solar 3">
+                <img src="https://share.google/p7Unn5aMf7D4bkYzz" alt="Solar 4">
             </div>
         </div>
     </section>
@@ -170,8 +163,17 @@
 
     <footer>
         <p>بەڕێوەبەر: صدردین قادر</p>
-        <p>📍 مخمور - گەرەکی شەهیدان - بەرامبەر مزگەوتی سید عمر</p>
-        <a href="tel:07504686017" class="phone-link">٠٧٥٠٤٦٨٦٠١٧</a>
+        
+        <div class="contact-box">
+            <p style="color: var(--accent-blue); font-weight: bold;">📍 ناونیشان (بۆ بینینی شوێن لەسەر نەخشە کلیک بکە):</p>
+            <a href="https://goo.gl/maps/iKk77dP3EjDf9kkL7" target="_blank" class="address-link">
+                مخمور - گەرەکی شەهیدان - بەرامبەر مزگەوتی سید عمر
+            </a>
+            
+            <p style="margin-top: 20px;">📞 ژمارەی مۆبایل:</p>
+            <a href="tel:07504686017" class="phone-link">٠٧٥٠٤٦٨٦٠١٧</a>
+        </div>
+
         <div class="social-links">
             <a href="https://www.facebook.com/share/1P2ckH63Dj/" target="_blank">Facebook</a>
             <a href="https://www.tiktok.com/@useree8ylmkkzq?_r=1&_t=ZS-94JHgt2xKxJ" target="_blank">TikTok</a>
