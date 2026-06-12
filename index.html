@@ -3,185 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Rafiddain - صدردین قادر</title>
+    <title>Al Rafidain بۆ وزەی خۆر | پێشەنگ لە کوالێتی</title>
     <style>
-        :root {
-            --dark-blue: #0a192f;
-            --light-blue: #112240;
-            --accent-blue: #3498db;
-            --grey: #f4f4f4;
-            --white: #ffffff;
-        } 
+        /* لێدانی ستایلی سەرەکی و فۆنت */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;700&display=swap');
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        body { background-color: var(--grey); color: #333; line-height: 1.7; scroll-behavior: smooth; } 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Kufi Arabic', sans-serif;
+        }
 
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* هێدەر و ناڤیگەیشن */
         header {
-            background-color: var(--dark-blue);
-            color: white;
-            padding: 15px 5%;
-            position: fixed;
-            width: 100%;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            width: 85%;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        } 
+        }
 
-        .logo h1 { font-size: 1.5rem; color: var(--white); }
-        .owner-name { font-size: 0.8rem; color: var(--accent-blue); display: block; } 
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00e676;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; }
-        nav a:hover { color: var(--accent-blue); } 
+        .logo span {
+            color: #fff;
+        }
 
+        /* بەشی سەرەکی (Hero Section) */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), 
-                        url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1350&q=80');
+            background: relative;
+            background-image: linear-gradient(rgba(15, 32, 39, 0.7), rgba(32, 58, 67, 0.7)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
+            height: 70vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: white;
+            color: #fff;
             padding: 0 20px;
-        } 
+        }
 
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.5rem; color: var(--accent-blue); font-weight: bold; } 
+        .hero-content h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
 
-        section { padding: 60px 10%; } 
+        .hero-content p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #e0e0e0;
+        }
 
-        /* بەشی کارەکانمان */
-        .our-works { background: white; text-align: center; }
-        .works-grid {
+        /* بەشی تایبەتمەندییەکان و کوالێتی */
+        .features {
+            padding: 80px 0;
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: #203a43;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #00e676;
+            margin: 15px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        .grid-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            gap: 30px;
         }
-        .work-card { background: var(--grey); padding: 10px; border-radius: 15px; }
-        .work-card img { width: 100%; border-radius: 10px; height: 220px; object-fit: cover; } 
 
-        /* بەشی زانیاری نوێ */
-        .info-section { background-color: var(--white); border-top: 5px solid var(--accent-blue); }
-        .info-container { max-width: 900px; margin: 0 auto; }
-        .info-box { background: var(--grey); padding: 30px; border-radius: 15px; margin-bottom: 30px; }
-        .info-box h3 { color: var(--dark-blue); margin-bottom: 15px; border-bottom: 2px solid var(--accent-blue); display: inline-block; }
-        
-        .promo-text { font-style: italic; color: var(--dark-blue); font-weight: bold; font-size: 1.2rem; text-align: center; margin: 40px 0; padding: 20px; border: 2px dashed var(--accent-blue); } 
+        .feature-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #203a43;
+        }
 
-        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
-        .image-gallery img { width: 100%; border-radius: 10px; height: 150px; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1); } 
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-top-color: #00e676;
+        }
 
-        .booking-form { max-width: 500px; margin: 40px auto; background: white; padding: 35px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        input, select, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; }
-        button { background: var(--accent-blue); color: white; border: none; cursor: pointer; font-weight: bold; } 
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #203a43;
+        }
 
-        footer { background: var(--dark-blue); color: white; padding: 40px 10%; text-align: center; }
-        .address-link { color: white; text-decoration: none; transition: 0.3s; display: inline-block; margin: 10px 0; }
-        .address-link:hover { color: var(--accent-blue); }
-        .phone-link { color: #2ecc71; text-decoration: none; font-size: 1.6rem; font-weight: bold; display: block; margin: 15px 0; }
-        .social-links a { color: var(--accent-blue); text-decoration: none; margin: 0 15px; font-weight: bold; }
+        /* بەشی بەرهەمە تایبەتەکان (Products) */
+        .products-section {
+            background-color: #f0f4f8;
+            padding: 80px 0;
+        }
+
+        .products-container {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        .grid-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e1e8ed;
+        }
+
+        .product-badge {
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            align-self: flex-start;
+            border-radius: 0 0 12px 0;
+        }
+
+        .product-info {
+            padding: 30px;
+            flex-grow: 1;
+        }
+
+        .product-info h3 {
+            font-size: 24px;
+            color: #203a43;
+            margin-bottom: 15px;
+        }
+
+        .product-specs {
+            margin-top: 20px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .product-specs ul {
+            list-style: none;
+        }
+
+        .product-specs ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-specs ul li strong {
+            color: #203a43;
+        }
+
+        /* بەشی پەیوەندی */
+        .contact {
+            padding: 80px 0;
+            background: #203a43;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #b0bec5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #00e676;
+            color: #0f2027;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 230, 118, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #00b552;
+            transform: scale(1.05);
+            color: #fff;
+        }
+
+        /* فوتەر */
+        footer {
+            background-color: #0f2027;
+            color: #78909c;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+            border-top: 1px solid #263238;
+        }
+
+        /* گونجاندن بۆ مۆبایل */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 30px;
+            }
+            .hero-content p {
+                font-size: 16px;
+            }
+            .grid-products {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
-<body> 
+<body>
 
     <header>
-        <div class="logo">
-            <h1>Al Rafiddain</h1>
-            <span class="owner-name">بەڕێوەبەر: صدردین قادر</span>
+        <div class="nav-container">
+            <div class="logo">Al Rafidain <span>| الرافدین</span></div>
+            <div style="color: #00e676; font-weight: bold;">وزەی نوێبووەوە</div>
         </div>
-        <nav>
-            <a href="#home">سەرەکی</a>
-            <a href="#works">کارەکانمان</a>
-            <a href="#info">زانیاری</a>
-            <a href="#booking">حجزکردن</a>
-        </nav>
-    </header> 
+    </header>
 
-    <section id="home" class="hero">
-        <h1>کۆمپانیای الرافدین</h1>
-        <p>کارەکانت بە رافیدەین بسپێرە و خەمی پسولەی ماڵەکەت نەبێ!</p>
-    </section> 
-
-    <section id="works" class="our-works">
-        <h2>کارەکانمان</h2>
-        <p>کارەکانت بە رافیدەین بسپێرە و خەمی پسولەی ماڵەکەت نەبێ ، بەهەرزانترین نرخ وە بە باشترین کوالێتی.</p>
-        <div class="works-grid">
-            <div class="work-card"><img src="https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?w=500" alt="Work 1"></div>
-            <div class="work-card"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=500" alt="Work 2"></div>
-            <div class="work-card"><img src="https://images.unsplash.com/photo-1613665813446-82a78c468a1d?w=500" alt="Work 3"></div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>کۆمپانیای الرافدین بۆ سیستەمی وزەی خۆر</h1>
+            <p>پێشەنگ لە دابینکردن، فرۆشتن و بەستنی باشترین و بەهێزترین پانێڵەکانی وزەی خۆر لەسەر ئاستی کوردستان و عێراق بە بەرزترین کوالێتی.</p>
+            <a href="#contact" class="cta-button">داواکردنی ڕاوێژکاری بێبەرامبەر</a>
         </div>
-    </section> 
+    </section>
 
-    <section id="info" class="info-section">
-        <div class="info-container">
-            <h2 style="text-align: center; margin-bottom: 40px;">زانیاری تەکنیکی Dahai Solar 720W</h2>
-            
-            <div class="info-box">
-                <h3>☀️ لوتکەی تەکنەلۆژیا</h3>
-                <p>کۆمپانیای الرافدین شانازی دەکات بە دابینکردنی بەهێزترین و نوێترین نەوەی پانێڵی وزەی خۆر لە جیهاندا. پانێڵی Dahai Solar 720W تەنها سەرچاوەیەک نییە بۆ کارەبا، بەڵکو وەبەرهێنانێکی ژیرانەیە بۆ داهاتوو.</p>
-            </div> 
-
-            <div class="info-box">
-                <h3>🚀 بۆچی Dahai Solar 720W هەڵبژێریت؟</h3>
-                <ul>
-                    <li><strong>تەکنەلۆژیای A-Type TOPCon:</strong> نوێترین شۆڕشی زانستی بە کارایی (23%).</li>
-                    <li><strong>بەرگری گەرمی:</strong> تایبەت بۆ ژینگەی کوردستان و عێراق دیزاین کراوە.</li>
-                    <li><strong>سیستەمی Bifacial:</strong> بەرهەمهێنان لە هەردوو لاوە (25% وزەی زیاتر).</li>
-                    <li><strong>گەرەنتی:</strong> ٢٥ بۆ ٣٠ ساڵ گەرەنتی بەرهەمهێنان.</li>
-                </ul>
-            </div> 
-
-            <div class="info-box">
-                <h3>💎 تایبەتمەندییە ناوازەکان</h3>
-                <p>• Anti-PID: پارێزراو لە دابەزینی توانا.<br>
-                   • SMBB: گواستنەوەی خێراتری کارەبا.<br>
-                   • بەرگری میکانیکی: خۆڕاگر لە بەرامبەر با و بارانی بەخوڕ و بەفر.</p>
-            </div> 
-
-            <div class="promo-text">
-                "لەگەڵ Al Rafiddain و Dahai Solar، ماڵەکەت بکە بە وێستگەیەکی بەهێزی وزە و ماڵئاوایی لە پسووڵەی گرانبەهای کارەبا بکە."
-            </div> 
-
-            <h3>📸 گالەری وێنەکان</h3>
-            <div class="image-gallery">
-                <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?w=400" alt="Solar 1">
-                <img src="https://images.unsplash.com/photo-1594818821917-cf74c43c945a?w=400" alt="Solar 2">
-                <img src="https://images.unsplash.com/photo-1521701971094-1974163f80d1?w=400" alt="Solar 3">
-                <img src="https://images.unsplash.com/photo-1545209174-cd44a30b26fc?w=400" alt="Solar 4">
+    <section class="features">
+        <h2 class="section-title">بۆچی Al Rafidain پێشەنگە؟</h2>
+        <div class="grid-features">
+            <div class="feature-card">
+                <h3>کوالێتی بێڕکابەر</h3>
+                <p>ئێمە تەنها کار لەسەر ئەو بەرهەمانە دەکەین کە خاوەن بڕوانامەی جیهانین و لەژێر تاقیکردنەوەی تونددا تێپەڕیون بۆ بەرگەگرتنی گەرمای توندی ناوچەکە.</p>
+            </div>
+            <div class="feature-card">
+                <h3>ئەندازیاری و بەستنی پرۆفیشناڵ</h3>
+                <p>تیمە پسپۆڕەکانمان بە وردترین شێوازی ئەندازیاری و بە بەکارهێنانی باشترین هێما و پێکهاتەکانی بەستن (Structure) سیستەمەکە جێگیر دەکەن.</p>
+            </div>
+            <div class="feature-card">
+                <h3>پشتیوانی و گەرەنتی ڕاستەقینە</h3>
+                <p>خزمەتگوزاری دوای فرۆشتن و چاودێری خولیی بەردەوام لەگەڵ گەرەنتی درێژخایەن بۆ دڵنیایی تەواوی کڕیارەکانمان.</p>
             </div>
         </div>
-    </section> 
+    </section>
 
-    <section id="booking">
-        <div class="booking-form">
-            <h2 style="text-align:center;">حجزکردنی ئێستا</h2>
-            <form>
-                <input type="text" placeholder="ناوی تەواو" required>
-                <input type="tel" placeholder="ژمارەی مۆبایل" required>
-                <button type="submit">ناردنی داواکاری</button>
-            </form>
+    <section class="products-section">
+        <div class="products-container">
+            <h2 class="section-title">لوتکەی تەکنەلۆژیا: پانێڵە فرۆشراوەکانی ئێمە</h2>
+            <p style="text-align: center; max-width: 600px; margin: -30px auto 40px auto; color: #666;">
+                ئێمە شانازی دەکەین بە دابینکردنی نوێترین و بەهێزترین پانێڵەکانی جیهان بە تەکنەلۆژیای Type A کە بەرزترین توانای بەرهەمهێنانی کارەبایان هەیە.
+            </p>
+            
+            <div class="grid-products">
+                <div class="product-card">
+                    <div class="product-badge">Premium Quality</div>
+                    <div class="product-info">
+                        <h3>Dahai Solar 720W (Type A)</h3>
+                        <p>پانێڵێکی ناوازە و گونجاو بۆ پڕۆژە گەورەکان و ماڵان، خاوەن توانایەکی بێوێنە لە هەڵمژینی تیشکی خۆر تەنانەت لە ڕۆژانی هەوریشدا.</p>
+                        <div class="product-specs">
+                            <ul>
+                                <li><strong>توانای بەرهەمهێنان:</strong> <span>720 وات</span></li>
+                                <li><strong>جۆری تەکنەلۆژیا:</strong> <span>Type A N-Type</span></li>
+                                <li><strong>بەرگری گەرمی:</strong> <span>زۆر بەرز (Anti-PID)</span></li>
+                                <li><strong>کارایی (Efficiency):</strong> <span>سەروو 23%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">Global Leader</div>
+                    <div class="product-info">
+                        <h3>Jinko Solar 720W (Type A)</h3>
+                        <p>یەکێک لە ناسراوترین و متمانەپێکراوترین براندەکانی جیهان، بەرهەمێنراو بە نوێترین تەکنەلۆژیای نەوەی نوێ بۆ پێدانی بەرزترین ئاستی وزە.</p>
+                        <div class="product-specs">
+                            <ul>
+                                <li><strong>توانای بەرهەمهێنان:</strong> <span>720 وات</span></li>
+                                <li><strong>جۆری تەکنەلۆژیا:</strong> <span>Type A Bifacial</span></li>
+                                <li><strong>کوالێتی دروستکراو:</strong> <span>پۆلێنی یەکەم (Tier 1)</span></li>
+                                <li><strong>تەمەنی بەسوود:</strong> <span>گەرەنتی درێژخایەنی بەرهەمهێنان</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section> 
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>ئامادەی بۆ گۆڕینی ماڵەکەت یان پڕۆژەکەت بۆ وزەی خۆر؟</h2>
+        <p>تیمی ئەندازیاری Al Rafidain ئامادەیە بۆ دیزاینکردنی سیستەمێکی گونجاو بۆ پێداویستییەکانی تۆ.</p>
+        <a href="tel:#" class="cta-button">پەیوەندیمان پێوە بکە</a>
+    </section>
 
     <footer>
-        <p>بەڕێوەبەر: صدردین قادر</p>
-        <a href="https://goo.gl/maps/iKk77dP3EjDf9kkL7" target="_blank" class="address-link">
-            📍 مخمور - گەرەکی شەهیدان - بەرامبەر مزگەوتی سید عمر
-        </a>
-        <a href="tel:07504686017" class="phone-link">٠٧٥٠٤٦٨٦٠١٧</a>
-        <div class="social-links">
-            <a href="https://www.facebook.com/share/1P2ckH63Dj/" target="_blank">Facebook</a>
-            <a href="https://www.tiktok.com/@useree8ylmkkzq?_r=1&_t=ZS-94JHgt2xKxJ" target="_blank">TikTok</a>
-        </div>
-        <p style="margin-top:20px; opacity:0.5;">&copy; 2026 Al Rafiddain Company</p>
-    </footer> 
+        <p>© 2026 کۆمپانیای Al Rafidain بۆ وزەی خۆر. هەموو مافەکان پارێزراوە.</p>
+    </footer>
 
 </body>
 </html>
